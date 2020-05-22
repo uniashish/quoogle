@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'userloginapp/main.css' %}" />
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alegreya:wght@500;800&family=Raleway:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+        <title>Quoogle</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="#">Quoogle</a>
+            </div>
+            <div class="nav-account">
+                <a href="#" class="nav-link">Login</a>
+                <a href="#" class="nav-link">Register</a>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <div class="container">
+                <h3>Having trouble on that test paper?</h3>
+                <p>Looking for questions perhaps?</p>
+                <h1>Just <span>Q</span>uoogle it!</h1>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature feature1">
+                We have a large and carefully curated database that makes sure your question papers are always top notch.
+            </div>
+            <div class="feature feature2">
+                Handcrafted tools for ease-of-access when you're crafting your question papers. Make quick, easy and efficient work by exporting to a DOCX, PDF or CSV format.
+            </div>
+            <div class="feature feature3">
+                This isn't just for teachers though! Students are more than welcome to practice for tests
+            </div>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>

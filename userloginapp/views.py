@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 def index(request):
-    return render(request,'userloginapp/index.html')
+    return render(request,'userloginapp/home.html')
 
 @login_required
 def special(request):
