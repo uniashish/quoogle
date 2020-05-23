@@ -8,20 +8,20 @@ class UserForm(forms.ModelForm):
 #class UserForm(UserCreationForm):
     username = forms.CharField(widget=forms.TextInput(
     attrs={
-    'class': 'form-control',
-    'placeholder': 'Choose A Username'
+    'class': 'input-field',
+    'placeholder': 'Username'
     }
     ))
     password = forms.CharField(widget=forms.PasswordInput(
     attrs={
-    'class': 'form-control',
+    'class': 'input-field',
     'placeholder': 'Choose Password'
     }
     ))
     email = forms.EmailField(widget=forms.EmailInput(
     attrs={
-    'class': 'form-control',
-    'placeholder': 'Your Email Here'
+    'class': 'input-field',
+    'placeholder': 'Email'
     }
     ))
     class Meta():
@@ -29,6 +29,11 @@ class UserForm(forms.ModelForm):
         fields = ('username','email','password',)
 
 class UserProfileInfoForm(forms.ModelForm):
+    profile_pic = forms.FileField(widget=forms.FileInput(
+    attrs={
+    'class':'submit-btn',
+    }
+    ))
     class Meta:
         model = UserProfileInfo
         fields = ('profile_pic',)

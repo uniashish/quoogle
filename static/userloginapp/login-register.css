@@ -1,0 +1,91 @@
+:root {
+    font-size: 16px;
+}
+
+body {
+    background-color: #151515;
+    font-family: 'Alegreya';
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 1rem 0;
+}
+
+.nav-brand a {
+    font-family: 'Abril Fatface';
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: white;
+    margin-left: 1rem;
+}
+
+.hero{
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url(question.jpg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+
+.form-box{
+  width: 380px;
+  height: 480px;
+  position: relative;
+  margin: 6% auto;
+  background: #fff;
+  padding: 5px;
+}
+
+.input-group{
+  top: 130px;
+  position: absolute;
+  width: 320px;
+}
+
+.input-field{
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+}
+
+.submit-btn{
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: black;
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  margin-top: 30px;
+  color: white;
+  font-family: 'Alegreya';
+  font-size: 15px;
+}
+
+#register{
+  left: 30px;
+}
+
+#cancel{
+  text-decoration: none;
+  width: 68%;
+  font-size: 15px;
+  text-align: center;
+}
+
+p{
+  font-size: 20px;
+  margin: auto;
+
+}

@@ -1,27 +1,33 @@
-{% extends "userloginapp/base.html" %}
 {% load static %}
-{% block body_block %}
-  {% if registered %}
-    <h1>Thank you for registering!</h1>
-  {% else %}
-  <div class="jumbotron">
-
-
-    <form enctype="multipart/form-data" method="POST">
-      {% csrf_token %}
-
-      {{ user_form.username.label }}
-      {{ user_form.username }}<br>
-      {{ user_form.email.label }}
-      {{ user_form.email }}<br>
-      {{ user_form.password.label }}
-      {{ user_form.password }}<br>
-
-      {{ profile_form.profile_pic.label }}<br>
-      {{ profile_form.profile_pic }}<br>
-
-      <button type="submit" class = "btn btn-primary">Register</button>
-    </form>
-  </div>
-  {% endif %}
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'userloginapp/login-register.css' %}" />
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alegreya:wght@500;800&family=Raleway:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+        <title>Registration</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="#">Quoogle</a>
+            </div>
+        </nav>
+        <div class="hero">
+          <div class="form-box">
+            <p>User Registration</p>
+            <form id="register" class="input-group" enctype="multipart/form-data" method="POST">
+              {% csrf_token %}
+              {{ user_form.username }}
+              {{ user_form.email }}
+              {{ user_form.password }}
+              {{ profile_form.profile_pic }}
+              <button type="submit" class="submit-btn">Register</button>
+              <a id="cancel" href=" {% url 'index' %}" class="submit-btn">Cancel</a>
+            </form>
+          </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
