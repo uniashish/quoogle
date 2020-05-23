@@ -19,6 +19,8 @@ cancelBtn2.addEventListener('click', closeModal);
 
 function closeModal() {
     modal.classList.remove('modal-active');
+    registerForm.classList.remove('form-active');
+    loginForm.classList.remove('form-active');
 }
 
 function displayRegisterForm() {
