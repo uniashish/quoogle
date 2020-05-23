@@ -114,6 +114,18 @@ body {
     grid-gap: 5rem;
     color: black;
     font-weight: 500;
+    animation: slideUp 2s forwards 0s ease-in-out;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(xx) translateY(0);
+        opacity: 1;
+    }
 }
 
 .feature {
@@ -175,11 +187,5 @@ body {
 
     .hero-content {
         grid-template-columns: 1fr 450px 1fr;
-    }
-}
-
-@media (max-width: 450px) {
-    :root {
-        font-size: 10px;
     }
 }
