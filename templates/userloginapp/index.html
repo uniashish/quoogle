@@ -7,10 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{% static 'userloginapp/main.css' %}" />
         <link rel="stylesheet" href="{% static 'userloginapp/forms.css' %}" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alegreya:wght@500;800&family=Raleway:wght@400;600;700;800;900&display=swap"
-            rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alegreya:wght@500;800&family=Raleway:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
         <title>Quoogle</title>
     </head>
     <body>
@@ -38,12 +35,10 @@
 
         <div class="features">
             <div class="feature feature1">
-                We have a large and carefully curated database that makes sure your question papers are always top
-                notch.
+                We have a large and carefully curated database that makes sure your question papers are always top notch.
             </div>
             <div class="feature feature2">
-                Handcrafted tools for ease-of-access when you're crafting your question papers. Make quick, easy and
-                efficient work by exporting to a DOCX, PDF or CSV format.
+                Handcrafted tools for ease-of-access when you're crafting your question papers. Make quick, easy and efficient work by exporting to a DOCX, PDF or CSV format.
             </div>
             <div class="feature feature3">
                 This isn't just for teachers though! Students are more than welcome to practice for tests
@@ -62,34 +57,29 @@
                 <form id="loginForm" action="{% url 'userloginapp:user_login' %}" method="POST">
                     {% csrf_token %}
                     <label for="username">Username*</label>
-                    <input type="text" name="username" id="username" required />
+                    <input type="text" placeholder="Enter your Username..." name="username" id="username" required />
                     <label for="password">Password*</label>
-                    <input type="password" name="password" id="password" required />
+                    <input type="password" placeholder="Password..." name="password" id="password" required />
                     <div class="form-actions">
                         <button class="btn btn-primary" id="loginBtn" type="submit">Login</button>
                         <button class="btn btn-secondary" type="button" id="cancelBtn">Cancel</button>
-                        <!-- <a href="#" class="btn">Test</a> -->
+                        <a href="#">Forgot Password?</a>
                     </div>
                 </form>
-                <form
-                    action="{% url 'userloginapp:register' %}"
-                    id="registerForm"
-                    enctype="multipart/form-data"
-                    method="POST"
-                >
+                <form action="{% url 'userloginapp:register' %}" id="registerForm" enctype="multipart/form-data" method="POST">
                     {% csrf_token %}
                     <label for="username">Username*</label>
-                    <input type="text" name="username" id="username" />
+                    <input type="text" placeholder="Choose a username..." name="username" id="username" />
                     <label for="email">Email*</label>
-                    <input type="email" name="email" id="email" />
+                    <input type="email" placeholder="Enter a valid email..." name="email" id="email" />
                     <div class="inline-inputs">
                         <div class="form-group">
                             <label for="password1">Password*</label>
-                            <input type="password" name="password1" id="password1" />
+                            <input type="password" placeholder="Password" name="password1" id="password1" />
                         </div>
                         <div class="form-group">
                             <label for="password2">Confirm Password*</label>
-                            <input type="password" name="password2" id="password2" />
+                            <input type="password" placeholder="Confirm Password" name="password2" id="password2" />
                         </div>
                     </div>
                     <label for="profile_pic" id="uploadBtn">
