@@ -36,8 +36,7 @@
 }
 
 .form-switch {
-    margin-bottom: 1rem;
-    /* padding: 0 2; */
+    margin: 0 auto;
     /* border-bottom: 1px solid white; */
     padding-bottom: 1.5rem;
 }
@@ -58,14 +57,30 @@
     font-weight: 500;
     font-size: 1.2rem;
     color: white;
+    transition: all 250ms ease-in-out;
     /* border: none; */
+}
+
+.form-switch button:hover {
+    cursor: pointer;
+    background: white;
+    color: black;
 }
 
 .modal-content form {
     font-size: 1.5rem;
-    display: flex;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
     flex-direction: column;
+    transition: all 250ms ease-in-out;
     /* color: black; */
+}
+
+.form-active {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .modal-content form input {
@@ -99,13 +114,18 @@
     justify-content: center;
 }
 
+.form-actions a {
+    margin: 1rem auto 0;
+    color: lightblue;
+}
+
 .btn {
     width: 70%;
     font-size: 1.2rem;
     font-family: 'Alegreya';
     font-weight: 500;
-    /* border: 2px solid white; */
-    /* background-color: lightgrey; */
+    border: 2px solid white;
+    background-color: lightgrey;
     border-radius: 500px;
     outline: none;
     padding: 0.2rem 2rem;
@@ -118,8 +138,10 @@
 }
 
 .btn-primary {
-    background: #1b19a0;
+    /* padding: 0.4rem 0; */
+    background: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
     border: 2px solid white;
+    /* border: none; */
     color: white;
     transition: all 300ms ease-in-out;
 }
@@ -127,11 +149,50 @@
 .btn-primary:hover {
     border: 2px solid transparent;
     cursor: pointer;
-    background: #4340f5;
+    background: linear-gradient(-60deg, #f09819 0%, #ff5858 100%);
 }
 
 .btn-secondary:hover {
     cursor: pointer;
     background: grey;
     color: white;
+}
+
+.inline-inputs {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1.5rem;
+}
+
+.form-group:nth-of-type(1) {
+    margin-left: 0;
+}
+
+.form-group:nth-of-type(2) {
+    margin-right: 0;
+}
+
+input[type='file'] {
+    display: none;
+}
+
+#uploadBtn {
+    margin: 1rem 0 0.5rem;
+    background-color: white;
+    color: black;
+    text-align: center;
+    /* width: fit-content; */
+    border-radius: 5px;
+    padding: 0.2rem;
+    transition: box-shadow 200ms ease-in-out;
+}
+
+#uploadBtn:hover {
+    cursor: pointer;
+    box-shadow: inset 0px 0px 10px 4px rgba(0, 0, 0, 0.77);
 }
