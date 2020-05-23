@@ -6,6 +6,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{% static 'userloginapp/main.css' %}" />
+        <link rel="stylesheet" href="{% static 'userloginapp/forms.css' %}" />
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alegreya:wght@500;800&family=Raleway:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
         <title>Quoogle</title>
     </head>
@@ -15,8 +16,12 @@
                 <a href="#">Quoogle</a>
             </div>
             <div class="nav-account">
-                <a href="{% url 'userloginapp:user_login' %}" class="nav-link">Login</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'userloginapp:logout' %}" class="nav-link">Logout</a>
+                {% else %}
+                <a href="#" id="loginModalBtn" class="nav-link">Login</a>
                 <a href="{% url 'userloginapp:register' %}" class="nav-link">Register</a>
+                {% endif %}
             </div>
         </nav>
 
@@ -40,6 +45,30 @@
             </div>
         </div>
 
-        <script src="index.js"></script>
+        <!--forms-->
+
+        <div class="modal">
+            <div class="modal-content">
+                <span>&times;</span>
+                <div class="form-switch">
+                    <button class="form-btn active-btn">Login</button>
+                    <button class="form-btn">Register</button>
+                </div>
+                <form id="loginForm" action="{% url 'userloginapp:user_login' %}" method="POST">
+                    {% csrf_token %}
+                    <label for="username">Username*</label>
+                    <input type="text" name="username" id="username" required />
+                    <label for="password">Password*</label>
+                    <input type="password" name="password" id="password" required />
+                    <div class="form-actions">
+                        <button class="btn btn-primary" id="loginBtn" type="submit">Login</button>
+                        <button class="btn btn-secondary" type="button" id="cancelBtn">Cancel</button>
+                        <!-- <a href="#" class="btn">Test</a> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script src="{%static 'userloginapp/index.js' %}"></script>
     </body>
 </html>

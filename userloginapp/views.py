@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from userloginapp.forms import UserForm, UserProfileInfoForm
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes,force_text
@@ -67,19 +67,17 @@ def user_login(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(username=username, password=password)
-        print(user)
+        # print(user)
         if user:
             if user.is_active:
                 login(request,user)
-                return HttpResponseRedirect(reverse('index'))
+                return redirect('index')
             else:
                 return HttpResponse("Your account is inactive or not verified")
         else:
             print("Someone tried to login and failed.")
             print("They used username: {} and password: {}".format(username,password))
             return HttpResponse("Invalid login details given")
-    else:
-        return render(request, 'userloginapp/login.html', {})
 
 
 def activate(request, uidb64, token):
