@@ -9,25 +9,22 @@
         <title>Registration</title>
     </head>
     <body>
-      <h1>useless changes</h1>
+        <h1>useless changes</h1>
+        <h2>Smaller useless change</h2>
         <nav class="navbar">
             <div class="nav-brand">
                 <a href="#">Quoogle</a>
             </div>
         </nav>
         <div class="hero">
-          <div class="form-box">
-            <p>User Registration</p>
-            <form id="register" class="input-group" enctype="multipart/form-data" method="POST">
-              {% csrf_token %}
-              {{ user_form.username }}
-              {{ user_form.email }}
-              {{ user_form.password }}
-              {{ profile_form.profile_pic }}
-              <button type="submit" class="submit-btn">Register</button>
-              <a id="cancel" href=" {% url 'index' %}" class="submit-btn">Cancel</a>
-            </form>
-          </div>
+            <div class="form-box">
+                <p>User Registration</p>
+                <form id="register" class="input-group" enctype="multipart/form-data" method="POST">
+                    {% csrf_token %} {{ user_form.username }} {{ user_form.email }} {{ user_form.password }} {{ profile_form.profile_pic }}
+                    <button type="submit" class="submit-btn">Register</button>
+                    <a id="cancel" href=" {% url 'index' %}" class="submit-btn">Cancel</a>
+                </form>
+            </div>
         </div>
         <script src="index.js"></script>
     </body>
