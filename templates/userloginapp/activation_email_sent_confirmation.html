@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Verification Email Confirmation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style media="screen">
+    :root {
+        font-size: 16px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #151515;
+    }
+
+    .container{
+      margin-top: 40px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card text-center text-white bg-dark mb-3">
+            <div class="card-header">
+              Registration Confirmation Email Sent
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Verfiy your email</h5>
+              <p class="card-text">Check you inbox for our email.</p>
+              <p cass="card-text">Click on the link provided to verify it's you.</p>
+              <p class="card-text">Login and Start Quoogling</p>
+              <a href="{% url 'index' %}" class="btn btn-primary">Back Login Page</a>
+            </div>
+            <div class="card-footer text-muted">
+              Thank you for registering
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

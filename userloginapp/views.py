@@ -31,7 +31,7 @@ def register(request):
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save(commit=False)
             user.is_active = False
-            # user.set_password(user.password)
+            user.set_password(user.password)
             user.save()
 
             # new code for email confirmation
@@ -56,7 +56,7 @@ def register(request):
                 print("Found It")
                 profile.profile_pic = request.FILES["profile_pic"]
             profile.save()
-            return redirect("index")
+            return redirect("userloginapp:confirm_activate_email")
             # registered = True
         else:
             print(user_form.errors, profile_form.errors)
@@ -99,3 +99,7 @@ def activate(request, uidb64, token):
         return HttpResponseRedirect(reverse("index"))
     else:
         return HttpResponse("Activation link is invalid!")
+
+
+def activation_email_confirmation(request):
+    return render(request, 'userloginapp/activation_email_sent_confirmation.html')
