@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -22,6 +23,17 @@
     .container{
       margin-top: 40px;
     }
+
+    img{
+      background: none;
+    }
+    height: 5px;{
+      text-align: center;
+    }
+    #step1{
+      color: black;
+      background-color: #ff7759;
+    }
     </style>
   </head>
   <body>
@@ -33,16 +45,46 @@
               Registration Confirmation Email Sent
             </div>
             <div class="card-body">
-              <h5 class="card-title">Verfiy your email</h5>
-              <p class="card-text">Check you inbox for our email.</p>
-              <p cass="card-text">Click on the link provided to verify it's you.</p>
-              <p class="card-text">Login and Start Quoogling</p>
-              <a href="{% url 'index' %}" class="btn btn-primary">Back Login Page</a>
+              <div class="card-deck">
+                <div class="card">
+                  <div class="card-body" id="step1">
+                    <h5 class="card-title">Step 1</h5>
+                    <p class="card-text">Check inbox of email you used for registering with us</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Eagerly waiting for you to join us</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body" id="step1">
+                    <h5 class="card-title">Step 2</h5>
+                    <p class="card-text">Click on the link or copy paste in address bar to start verification</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Hang on!! Magic is about to start</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body" id="step1">
+                    <h5 class="card-title">Step 3</h5>
+                    <p class="card-text">Press the button given below to go back to login page and start Quoogling</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">End of your Questions search</small>
+                  </div>
+                </div>
+              </div><br>
+              <a href="{% url 'index' %}" class="btn btn-info">Back Login Page</a>
             </div>
             <div class="card-footer text-muted">
               Thank you for registering
             </div>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+
         </div>
       </div>
     </div>
