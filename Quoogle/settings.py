@@ -29,7 +29,7 @@ SECRET_KEY = '%!hls#$h8wi_kahzt9+cewfj+t)%zypb!@+s##(sc&ybu@&8ej'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ancient-dawn-10622.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
