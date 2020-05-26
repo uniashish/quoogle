@@ -17,9 +17,18 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url,include
 from userloginapp import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name='index'),
     path('',include('userloginapp.urls')),
+
+    path('reset_password/',
+    auth_views.PasswordResetView.as_view(template_name="userloginapp/password_reset_form.html"),
+    name="reset_password"),
+
+    path('reset_password_sent/',auth_views.PasswordResetDoneView.as_view(template_name="userloginapp/activation_email_sent_confirmation.html"),name="password_reset_done"),
+    path('reset/<uidb64>/<token>/',auth_views.PasswordResetConfirmView.as_view(template_name="userloginapp/enter_new_password.html"),name="password_reset_confirm"),
+    path('reset_password_complete/',auth_views.PasswordResetCompleteView.as_view(),name="password_reset_complete"),
 ]
